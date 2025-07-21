@@ -1,0 +1,67 @@
+/* App.css */
+
+.font-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.font-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.font-bold {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+
+
+
+.font-heading1 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.font-text1 {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.font-heading2 {
+  font-family: 'Bebas Neue', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.font-text2 {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-heading3 {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.font-text3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-italic {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+
+.font-italic1 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.font-italic2 {
+  font-family: 'Dancing Script', cursive;
+  font-style: italic;
+}
+

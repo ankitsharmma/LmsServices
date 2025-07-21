@@ -1,0 +1,118 @@
+.error-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Error text container */
+  #error-text {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  /* Image styling */
+  #error-text figure img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+  }
+  
+  /* Text alignment */
+  .text-center {
+    margin-top: 20px;
+  }
+  
+  /* Paragraph styling */
+  .p-a {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .p-b {
+    font-size: 16px;
+    color: #777;
+  }
+  
+  /* Button styling */
+  .btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .btn:hover {
+    background-color: darkred;
+  }
+  
+  /* Responsive Design */
+  
+  /* Tablets */
+  @media (max-width: 768px) {
+    .error-section {
+        height: auto;
+        padding: 40px 20px;
+    }
+  
+    #error-text {
+        max-width: 90%;
+    }
+  
+    #error-text figure img {
+        max-width: 300px;
+    }
+  
+    .p-a {
+        font-size: 16px;
+    }
+  
+    .p-b {
+        font-size: 14px;
+    }
+  
+    .btn {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+  }
+  
+  /* Mobile Devices */
+  @media (max-width: 480px) {
+    .error-section {
+        height: auto;
+        padding: 30px 15px;
+    }
+  
+    #error-text {
+        max-width: 100%;
+    }
+  
+    #error-text figure img {
+        max-width: 250px;
+    }
+  
+    .p-a {
+        font-size: 14px;
+    }
+  
+    .p-b {
+        font-size: 12px;
+    }
+  
+    .btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+  }
+  
