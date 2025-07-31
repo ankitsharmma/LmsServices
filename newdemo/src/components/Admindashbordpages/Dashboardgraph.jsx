@@ -5,7 +5,7 @@ const TotalStudentBox = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:8080/auth/user")
+    fetch("https://api.sslcloudservices.com/auth/user")
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched students data:", data); // 👈 log here
