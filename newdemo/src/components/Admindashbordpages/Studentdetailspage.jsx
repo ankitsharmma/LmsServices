@@ -28,7 +28,7 @@ function Studentdetailspage() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://82.29.165.108:8080/auth/user");
+      const res = await fetch("https://api.sslcloudservices.com/auth/user");
       const json = await res.json();
       setData(json.users || []);
     } catch (err) {
@@ -40,7 +40,7 @@ function Studentdetailspage() {
 
   const handleDelete = async (email) => {
     if (!window.confirm(`Delete ${email}?`)) return;
-    await fetch(`http://82.29.165.108:8080/auth/user/email`, {
+    await fetch(`https://api.sslcloudservices.com/auth/user/email`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
@@ -62,7 +62,7 @@ function Studentdetailspage() {
   };
 
   const handleFormSubmit = async () => {
-    await fetch(`http://82.29.165.108:8080/auth/user/email`, {
+    await fetch(`https://api.sslcloudservices.com/auth/user/email`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -104,7 +104,7 @@ function Studentdetailspage() {
       return;
     }
 
-    await fetch(`http://82.29.165.108:8080/auth/signup`, {
+    await fetch(`https://api.sslcloudservices.com/auth/signup`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(signupInfo),
