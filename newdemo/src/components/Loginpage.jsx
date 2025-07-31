@@ -33,7 +33,7 @@ const Login = () => {
     }
 
     try {
-      const url = `http://82.29.165.108:8080/auth/login`;
+      const url = `https://api.sslcloudservices.com/auth/login`;
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
