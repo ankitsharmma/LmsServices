@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 
+
+
 function Studentdetailspage() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -10,6 +12,12 @@ function Studentdetailspage() {
 
   const [editStudent, setEditStudent] = useState(null);
   const [formData, setFormData] = useState({});
+
+  const Url_getuser="/auth/user"; // Adjust the URL as needed
+  const Url_Delete="/auth/user/email"; // Adjust the URL as needed
+  const Url_Update="/auth/user/email"; // Adjust the URL as needed
+  const Url_Signup="/auth/signup"; // Adjust the URL as needed
+
 
   const [showSignupModal, setShowSignupModal] = useState(false);
   const [signupInfo, setSignupInfo] = useState({
@@ -28,7 +36,7 @@ function Studentdetailspage() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const res = await fetch("https://api.sslcloudservices.com/auth/user");
+      const res = await fetch(`${Url_getuser}`);
       const json = await res.json();
       setData(json.users || []);
     } catch (err) {
@@ -40,7 +48,7 @@ function Studentdetailspage() {
 
   const handleDelete = async (email) => {
     if (!window.confirm(`Delete ${email}?`)) return;
-    await fetch(`https://api.sslcloudservices.com/auth/user/email`, {
+    await fetch(`${Url_Delete}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
@@ -62,7 +70,7 @@ function Studentdetailspage() {
   };
 
   const handleFormSubmit = async () => {
-    await fetch(`https://api.sslcloudservices.com/auth/user/email`, {
+    await fetch(`${Url_Update}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -104,7 +112,7 @@ function Studentdetailspage() {
       return;
     }
 
-    await fetch(`https://api.sslcloudservices.com/auth/signup`, {
+    await fetch(`${Url_Signup}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(signupInfo),
