@@ -2,38 +2,37 @@ import React, { useState, useEffect } from "react";
 
 const videos = [
   { id: "HAAFTy_InWA", title: "Introduction Video" },
-  { id: "kJQP7kiw5Fk", title: "Next Steps" },
-  { id: "9bZkp7q19f0", title: "Advanced Tips" }
+  
 ];
 
 const Dashboard = () => {
   const [selectedVideo, setSelectedVideo] = useState(videos[0].id);
   const [userEmail, setUserEmail] = useState("");
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const res = await fetch("http://localhost:8080/auth/login", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`
-          }
-        });
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     try {
+  //       const res = await fetch("http://localhost:8080/auth/login", {
+  //         method: "GET",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           Authorization: `Bearer ${localStorage.getItem("token")}`
+  //         }
+  //       });
 
-        const data = await res.json();
-        if (data.success) {
-          setUserEmail(data.email || "Guest");
-        } else {
-          setUserEmail("Guest");
-        }
-      } catch (err) {
-        setUserEmail("Guest");
-      }
-    };
+  //       const data = await res.json();
+  //       if (data.success) {
+  //         setUserEmail(data.email || "Guest");
+  //       } else {
+  //         setUserEmail("Guest");
+  //       }
+  //     } catch (err) {
+  //       setUserEmail("Guest");
+  //     }
+  //   };
 
-    fetchUser();
-  }, []);
+  //   fetchUser();
+  // }, []);
 
   return (
     <div className="min-h-screen bg-gray-50 mt-20 flex flex-col md:flex-row">
@@ -41,7 +40,7 @@ const Dashboard = () => {
       <aside className="md:w-1/4 bg-white p-4 shadow-md">
         <h2 className="text-xl font-bold mb-2 text-purple-700">🎥 Video List</h2>
         <p className="mb-4 text-gray-600 text-sm">
-          Logged in as: <span className="font-semibold">{userEmail}</span>
+          
         </p>
         <ul className="space-y-2">
           {videos.map((video) => (
