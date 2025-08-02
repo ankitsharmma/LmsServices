@@ -17,7 +17,8 @@ const Login = () => {
     email: "",
     password: ""
   });
-
+  
+ 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setLoginInfo({ ...loginInfo, [name]: value });
@@ -33,8 +34,8 @@ const Login = () => {
     }
 
     try {
-      const url = `https://api.sslcloudservices.com/auth/login`;
-      const response = await fetch(url, {
+      const Url_Login = "/auth/login";
+      const response = await fetch(  `${Url_Login}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(loginInfo)
