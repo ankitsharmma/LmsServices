@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import kingpng from "../assets/kindpng.png";
-import { ToastContainer } from "react-toastify";
-import { handleError, handleSuccess } from "../components/utils";
+// import { ToastContainer } from "react-toastify";
+// import { handleError, handleSuccess } from "../components/utils";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
@@ -27,45 +27,45 @@ const SignUp = () => {
     setSignupInfo({ ...signupInfo, [name]: value });
   };
 
-  const handleSignup = async (e) => {
-    e.preventDefault();
+  // const handleSignup = async (e) => {
+  //   e.preventDefault();
 
-    const { name, email, phoneNumber, address, password, confirmPassword } = signupInfo;
+  //   const { name, email, phoneNumber, address, password, confirmPassword } = signupInfo;
 
-    if (!name || !email || !phoneNumber || !address || !password || !confirmPassword) {
-      return handleError("All fields are required");
-    }
+  //   if (!name || !email || !phoneNumber || !address || !password || !confirmPassword) {
+  //     return handleError("All fields are required");
+  //   }
 
-    if (password !== confirmPassword) {
-      return handleError("Passwords do not match");
-    }
+  //   if (password !== confirmPassword) {
+  //     return handleError("Passwords do not match");
+  //   }
 
-    try {
-      const url = `http://http://82.29.165.108:8080/auth/signup`;
-      const response = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(signupInfo)
-      });
+  //   try {
+  //     const url = `http://http://82.29.165.108:8080/auth/signup`;
+  //     const response = await fetch(url, {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(signupInfo)
+  //     });
 
-      const result = await response.json();
-      const { success, message, jwtToken, name: userName, error } = result;
+  //     const result = await response.json();
+  //     const { success, message, jwtToken, name: userName, error } = result;
 
-      if (success) {
-        handleSuccess(message);
-        localStorage.setItem("token", jwtToken);
-        localStorage.setItem("loggedInUser", userName);
-        setTimeout(() => navigate("/home"), 1000);
-      } else if (error) {
-        const details = error?.details?.[0]?.message || error;
-        handleError(details);
-      } else {
-        handleError(message);
-      }
-    } catch (err) {
-      handleError(err.message || "Network error");
-    }
-  };
+  //     if (success) {
+  //       handleSuccess(message);
+  //       localStorage.setItem("token", jwtToken);
+  //       localStorage.setItem("loggedInUser", userName);
+  //       setTimeout(() => navigate("/home"), 1000);
+  //     } else if (error) {
+  //       const details = error?.details?.[0]?.message || error;
+  //       handleError(details);
+  //     } else {
+  //       handleError(message);
+  //     }
+  //   } catch (err) {
+  //     handleError(err.message || "Network error");
+  //   }
+  // };
 
   return (
     <>
@@ -181,7 +181,7 @@ const SignUp = () => {
           />
         </div>
       </div>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </>
   );
 };
