@@ -4,11 +4,13 @@ const TotalStudentBox = () => {
   const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(true);
 
+ const Url="/auth/user"; // Adjust the URL as needed
+
   useEffect(() => {
-    fetch("https://api.sslcloudservices.com/auth/user")
+    fetch( `${Url}`,)
       .then((res) => res.json())
       .then((data) => {
-        console.log("Fetched students data:", data); // 👈 log here
+        console.log("Fetched students data:", data);
         setCount(data.users ? data.users.length : 0);
         setLoading(false);
       })
@@ -16,7 +18,8 @@ const TotalStudentBox = () => {
         console.error("Error fetching students:", err);
         setLoading(false);
       });
-  }, []);
+      console.log( "API URL:", Url);
+  }, [ Url]);
 
   return (
     <div className="p-4">
