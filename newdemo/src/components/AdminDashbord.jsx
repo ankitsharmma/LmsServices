@@ -9,32 +9,6 @@ const DashboardAdmin = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [filter, setFilter] = useState("");
 
-  const [students, setStudents] = useState([
-    {
-      id: 1,
-      name: "John Doe",
-      email: "john@example.com",
-      phoneNumber: "1234567890",
-      address: "123 Main St",
-      password: "******",
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      email: "jane@example.com",
-      phoneNumber: "9876543210",
-      address: "456 Park Ave",
-      password: "******",
-    },
-    {
-      id: 3,
-      name: "Alice Johnson",
-      email: "alice@example.com",
-      phoneNumber: "5551234567",
-      address: "789 Elm Rd",
-      password: "******",
-    },
-  ]);
 
   const handleDelete = (id) => {
     const confirmed = window.confirm("Are you sure you want to delete?");
